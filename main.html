@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos David Gale Jiménez - Desarrollador Full Stack</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            text-align: center;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 60px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .profile-img-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            border: 4px solid white;
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4a5568;
+            font-size: 0.95em;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #2d3748;
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+
+        .profile-description {
+            color: #4a5568;
+            font-size: 1.05em;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .education-item, .experience-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .education-item:hover, .experience-item:hover {
+            transform: translateX(10px);
+        }
+
+        .education-item h3, .experience-item h3 {
+            color: #2d3748;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .education-item .institution, .experience-item .company {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .education-item .details, .experience-item .details {
+            color: #718096;
+            font-size: 0.95em;
+        }
+
+        .soft-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .soft-skill {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .soft-skill:hover {
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .soft-skill-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .soft-skill-name {
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://i.ibb.co/WNTfzQBy/profile-img.png" alt="Carlos David Gale Jiménez" class="profile-img-photo">
+            <h1>Carlos David Gale Jiménez</h1>
+            <p class="subtitle">Desarrollador Full Stack | Ingeniero de Sistemas</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    📱 <span>+57 312 668 9597</span>
+                </div>
+                <div class="contact-item">
+                    📧 <span>carlosgale@americana.edu.co</span>
+                </div>
+                <div class="contact-item">
+                    📍 <span>Galapa, Atlántico, Colombia</span>
+                </div>
+                <div class="contact-item">
+                    🆔 <span>CC 1100544045</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>💼 Perfil Profesional</h2>
+            <p class="profile-description">
+                Estudiante de Ingeniería de Sistemas con título técnico en multimedia, especializado en desarrollo web y móvil, diseño UI/UX, bases de datos y automatización de pruebas. Domino múltiples lenguajes de programación incluyendo Java, Python, C++, PHP, JavaScript, SQL, HTML y CSS. Mi experiencia abarca el desarrollo de aplicaciones CRUD bajo modelo en 4 capas, sistemas de gestión completos utilizando PHP, MySQL y XAMPP, así como proyectos que integran servicios web, REST y APIs para optimizar la comunicación entre plataformas. Además, he trabajado con visión artificial implementando detección de rostros con Python y OpenCV. Me caracterizo por mi creatividad, responsabilidad y compromiso con la calidad, enfocándome siempre en crear soluciones eficientes, funcionales y visualmente atractivas que mejoren significativamente la experiencia del usuario.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>💻 Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Java</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">C++</div>
+                <div class="skill-item">PHP</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">SQL</div>
+                <div class="skill-item">HTML & CSS</div>
+                <div class="skill-item">MySQL</div>
+                <div class="skill-item">XAMPP</div>
+                <div class="skill-item">REST APIs</div>
+                <div class="skill-item">Desarrollo Web</div>
+                <div class="skill-item">UI/UX Design</div>
+                <div class="skill-item">Bases de Datos</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎓 Educación</h2>
+            
+            <div class="education-item">
+                <h3>Técnico en Programación de Computadores</h3>
+                <p class="institution">Corporación Universitaria Americana</p>
+                <p class="details">📍 Barranquilla | 🎯 Semestre Actual: 7to | 📚 Ciclo Técnologo</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Técnico en Diseño e Integración Multimedia</h3>
+                <p class="institution">SENA</p>
+                <p class="details">📍 Barranquilla | 📅 2020 - 2022</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Bachillerato Técnico</h3>
+                <p class="institution">Institución Educativa Técnica Villa Olímpica</p>
+                <p class="details">📍 Galapa, Atlántico | 📅 2017 - 2022</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💼 Experiencia Laboral</h2>
+            
+            <div class="experience-item">
+                <h3>Programador</h3>
+                <p class="company">Soluciones Ambientales e Industriales del Caribe</p>
+                <p class="details">⏱️ Duración: 6 meses | 📞 Referencia: +57 300 770 5726</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🌟 Habilidades Blandas</h2>
+            <div class="soft-skills">
+                <div class="soft-skill">
+                    <div class="soft-skill-icon">🚀</div>
+                    <div class="soft-skill-name">Proactividad</div>
+                </div>
+                <div class="soft-skill">
+                    <div class="soft-skill-icon">✅</div>
+                    <div class="soft-skill-name">Responsabilidad</div>
+                </div>
+                <div class="soft-skill">
+                    <div class="soft-skill-icon">🎨</div>
+                    <div class="soft-skill-name">Creatividad</div>
+                </div>
+                <div class="soft-skill">
+                    <div class="soft-skill-icon">💬</div>
+                    <div class="soft-skill-name">Comunicación Asertiva</div>
+                </div>
+                <div class="soft-skill">
+                    <div class="soft-skill-icon">🔄</div>
+                    <div class="soft-skill-name">Adaptabilidad</div>
+                </div>
+                <div class="soft-skill">
+                    <div class="soft-skill-icon">🧠</div>
+                    <div class="soft-skill-name">Pensamiento Analítico</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Carlos David Gale Jiménez | Desarrollador Full Stack</p>
+            <p>Disponible para nuevas oportunidades laborales</p>
+        </footer>
+    </div>
+</body>
+</html>
